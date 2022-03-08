@@ -2,6 +2,7 @@
 # hello
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/thinkr-n2-mars2022/hello.anna/workflows/R-CMD-check/badge.svg)](https://github.com/thinkr-n2-mars2022/hello.anna/actions)
 <!-- badges: end -->
 
 The goal of hello is to ...
