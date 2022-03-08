@@ -1,0 +1,60 @@
+---
+title: "flat_minimal.Rmd empty"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r development, include=FALSE}
+library(testthat)
+library(glue)
+someone <- "You"
+message(glue::glue("Hello {someone}"))
+usethis::use_pkgdown()
+pkgdown::build_site()
+usethis::use_readme_md()
+usethis::use_code_of_conduct(contact = 'anna.mantsoki@finddx.org')
+usethis::use_news_md(open = TRUE)
+usethis::use_version()
+covr::report()
+```
+
+<!--
+ You need to run the 'description' chunk in the '0-dev_history.Rmd' file before continuing your code there.
+-->
+
+# Hello function
+This function allows the user to give a name and a message is returned saying Hello to the user and the name that was given as an input.
+
+```{r function-say_hello}
+#' say_hello A function to say hello
+#'
+#' @param someone the name of the person to say hello to (type = character)
+#'
+#' @importFrom glue glue
+#' @return A message with Hello to someone giving their name
+#' @export
+#'
+#' @examples
+say_hello <- function(someone = "You") {
+ message(glue::glue("Hello {someone}"))
+}
+```
+
+```{r examples-say_hello}
+say_hello()
+say_hello(someone = "Katerina")
+```
+
+```{r tests-say_hello}
+test_that("say_hello works", {
+  expect_message(say_hello(), "Hello You")
+})
+```
+
+
+```{r development-inflate, eval=FALSE}
+# Run but keep eval=FALSE to avoid infinite loop
+# Execute in the console directly
+fusen::inflate(flat_file = "dev/flat_minimal.Rmd", vignette_name = "Minimal")
+```

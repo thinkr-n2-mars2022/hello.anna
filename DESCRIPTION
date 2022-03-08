@@ -1,0 +1,23 @@
+Package: hello
+Title: Functions To Say Hello
+Version: 0.0.0.9001
+Authors@R: c(
+    person("Anna", "Mantsoki", , "anna.mantsoki@finddx.org", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-1565-9313")),
+    person("FIND", role = "cph")
+  )
+Description: Use Rmarkdown First method to build your package. Start your
+    package with documentation. Everything can be set from a Rmarkdown
+    file in your project.
+License: MIT + file LICENSE
+Imports: 
+    glue
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
